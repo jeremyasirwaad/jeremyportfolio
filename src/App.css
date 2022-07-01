@@ -1,38 +1,194 @@
-.App {
-  text-align: center;
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+
 }
 
-.App-logo {
-  height: 40vmin;
+.app
+{
+  /* position: absolute; */
+  width: 100%;
+  height: 100vh;
+}
+
+.background{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(23, 23, 23);
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+}
+
+.subtitle
+{
+  font-size: 24px;
+  color: rgb(230, 230, 230);
+  margin: 15px;
+}
+
+.dot{
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: block;
+
+}
+
+
+.landinginfo
+{
+  position: absolute;
+  /* width: 600px;
+  height: 500px; */
+  /* background-color: rgb(23, 23, 23); */
+  background-color: transparent;
+  /* opacity: 1; */
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 40px;
+  left: 90px;
+}
+.landinginfo .title{
+  font-size: 90px;
+  color: white;
+  
+  font-weight: 700;
+  /* font-family: "Open Sans",sans-serif; */
+  /* font-size: 40px; */
+  /* line-height: 24px; */
+  /* z-index: 50; */
+}
+
+
+
+.dot::before
+{
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(246, 106, 106);
+  transform: scale(0.075);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgb(223, 101, 101),
+  0 0 20px rgb(223, 101, 101);
+  /* 0 0 40px rgb(255, 255, 255),
+  0 0 60px rgb(255, 255, 255),
+  0 0 80px rgb(255, 255, 255),
+  0 0 100px rgb(255, 255, 255); */
   pointer-events: none;
+  transition: 2s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.dot:hover::before{
+  transform: scale(0.35);
+  transition: 0s;
+  background-color: rgb(242, 255, 0);
+  box-shadow: 0 0 10px rgb(242, 255, 0),
+  0 0 20px rgb(242, 255, 0),
+  0 0 40px rgb(242, 255, 0),
+  0 0 60px rgb(242, 255, 0),
+  0 0 80px rgb(242, 255, 0),
+  0 0 100px rgb(242, 255, 0);
+
+}
+
+
+
+
+
+
+.button-85 {
+  z-index: 2;
+  padding: 0.2em 4em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  z-index: 2;
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.titlej
+{
+  font-size: 90px;
+  /* color: white; */
+  
+  font-weight: 700;
+  color: rgb(0, 187, 255);
+}
+
+.button-85:after {
+  z-index: 2;
+  content: "Contact Me";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-weight: 700;
+  font-family: "Open Sans",sans-serif;
+  letter-spacing: 2px;
+  font-size: 15px;
+  font-style: italic;
+
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
